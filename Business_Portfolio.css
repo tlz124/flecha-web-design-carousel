@@ -1518,7 +1518,7 @@ section::before {
     /* CRITICAL: children must inherit the 3D space */
     transform-style: preserve-3d;
     /* JS transitions between angle targets when a card is clicked */
-    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     width: 0;
     height: 0;
 }
@@ -1839,13 +1839,15 @@ section::before {
         overflow: hidden;
     }
 
-    /* Stage becomes a horizontal flex row */
+    /* Stage becomes a horizontal flex row — must be wide enough for all cards */
     .turntable-stage {
         display: flex;
         flex-direction: row;
         position: absolute;
         left: 0;
         top: 0;
+        /* Each slot is 100vw wide; stage holds all 12 slots side by side */
+        width: calc(100% * 12);
         height: 100%;
         /* JS sets translateX to slide between cards */
         transform: translateX(0);
@@ -1854,15 +1856,15 @@ section::before {
         transform-style: flat;
     }
 
-    /* Each slot becomes a fixed-width flex item */
+    /* Each slot is exactly one screen-width wide */
     .turntable-card-slot {
         position: relative;
         left: auto;
         top: auto;
-        flex: 0 0 100%;
-        width: 100%;
+        flex: 0 0 calc(100% / 12);
+        width: calc(100% / 12);
         height: 100%;
-        transform: none !important; /* override 3D rotateY */
+        transform: none !important;
         display: flex;
         align-items: center;
         justify-content: center;

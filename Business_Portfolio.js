@@ -903,11 +903,11 @@ testimonialCards.forEach(card => {
 
         // Mobile: translate stage so active visible card is centered
         if (isMobile) {
-            // Find the position of the active card in the full slot list
-            // On mobile the stage is a flex row of ALL slots (visible + hidden)
-            // We slide to the raw slot index
+            // Each slot is (100% / TOTAL) of the stage width.
+            // To show slot rawIdx, shift the stage left by rawIdx slot-widths.
             const rawIdx = visibleIndices[activeVisible] ?? 0;
-            stage.style.transform = `translateX(${-rawIdx * 100}%)`;
+            const slotWidthPct = 100 / TOTAL; // e.g. 8.333% per slot
+            stage.style.transform = `translateX(${-rawIdx * slotWidthPct}%)`;
 
             // Mark is-front
             slots.forEach((slot, i) => {
