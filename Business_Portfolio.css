@@ -1,0 +1,1925 @@
+/* ===== FLECHA WEB DESIGN - FINAL DESIGN =====
+   Sleek Monochromatic with Subtle Purple Accents
+   ============================================== */
+
+/* ===== CSS Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Monochromatic Palette */
+    --black: #000000;
+    --dark-gray: #0a0a0a;
+    --medium-gray: #1a1a1a;
+    --light-gray: #2a2a2a;
+    --border-gray: #3a3a3a;
+    --text-white: #ffffff;
+    --text-light: #e0e0e0;
+    --text-gray: #a0a0a0;
+    
+    /* Subtle Purple Accents */
+    --purple-accent: #d4a5ff;
+    --purple-light: #e8ccff;
+    --purple-dark: #b580e6;
+    
+    /* Glow Effects */
+    --glow-white: 0 0 10px rgba(255, 255, 255, 0.3), 0 0 20px rgba(255, 255, 255, 0.2);
+    --glow-white-strong: 0 0 15px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.3);
+    --glow-purple: 0 0 10px rgba(139, 122, 184, 0.4), 0 0 20px rgba(139, 122, 184, 0.2);
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-white);
+    background: var(--black);
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===== Cookie Consent Banner ===== */
+.cookie-consent {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--medium-gray);
+    border-top: 1px solid var(--border-gray);
+    padding: 1.5rem;
+    z-index: 10000;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+}
+
+.cookie-consent.hidden {
+    transform: translateY(100%);
+}
+
+.cookie-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.cookie-content p {
+    flex: 1;
+    min-width: 250px;
+    color: var(--text-gray);
+}
+
+.cookie-buttons {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.cookie-btn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid var(--border-gray);
+    background: transparent;
+    color: var(--text-white);
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.cookie-btn:hover {
+    background: var(--light-gray);
+    border-color: var(--text-white);
+}
+
+.cookie-btn.accept {
+    background: var(--purple-accent);
+    border-color: var(--purple-accent);
+}
+
+.cookie-btn.accept:hover {
+    background: var(--purple-light);
+    box-shadow: var(--glow-purple);
+}
+
+/* ===== Header & Navigation ===== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(10, 10, 10, 0.98);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-gray);
+    z-index: 1000;
+}
+
+.navbar {
+    padding: 1rem 0;
+}
+
+
+
+
+
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+
+.logo-image {
+    height: 100px;
+    width: auto;
+    transition: all 0.3s ease;
+/* 
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.2));
+ */
+    display: block;
+    margin: -0.5rem 0;
+}
+
+.logo-text {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.logo-text-main {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+.logo-text-sub {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--purple-accent);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    line-height: 1;
+}
+
+
+.logo:hover .logo-text-main {
+    color: var(--text-light);
+}
+
+.logo:hover .logo-text-sub {
+    color: var(--purple-light);
+}
+
+/* ===== Hamburger Menu ===== */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 2000;
+}
+
+.hamburger span {
+    width: 30px;
+    height: 2px;
+    background: var(--text-white);
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.hamburger:hover span {
+    background: var(--purple-accent);
+    box-shadow: var(--glow-purple);
+}
+
+/* ===== Menu Overlay ===== */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    max-width: 400px;
+    height: 100vh;
+    background: var(--dark-gray);
+    border-left: 1px solid var(--border-gray);
+    z-index: 1500;
+    transition: right 0.4s ease;
+    overflow-y: auto;
+}
+
+.menu-overlay.active {
+    right: 0;
+}
+
+.close-menu {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+}
+
+.close-menu:hover {
+    color: var(--purple-accent);
+    transform: rotate(90deg);
+}
+
+.menu-nav {
+    padding: 5rem 2rem 2rem;
+}
+
+.menu-nav ul {
+    list-style: none;
+}
+
+.menu-nav ul li {
+    margin-bottom: 1.5rem;
+}
+
+.menu-link {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--text-white);
+    text-decoration: none;
+    padding: 1rem 1.5rem;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.menu-link:hover {
+    color: var(--purple-light);
+    border-color: var(--border-gray);
+    background: rgba(139, 122, 184, 0.1);
+    transform: translateX(10px);
+}
+
+/* ===== Hero Section ===== */
+.hero {
+    margin-top: 130px;
+    background: var(--black);
+    color: white;
+    padding: 8rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.hero-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    color: var(--text-white);
+    text-shadow: var(--glow-white);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: var(--text-white);
+    font-weight: 400;
+}
+
+/* ===== Container & Sections ===== */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+section {
+    padding: 6rem 0;
+    position: relative;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        var(--border-gray) 20%, 
+        var(--purple-accent) 50%, 
+        var(--border-gray) 80%, 
+        transparent 100%);
+    opacity: 0.5;
+}
+
+.section-title {
+    font-size: 3rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--purple-accent), transparent);
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-gray);
+    font-size: 1.125rem;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 300;
+}
+
+/* ===== Company Intro Section ===== */
+.company-intro {
+    background: var(--dark-gray);
+}
+
+.intro-text {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 2;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* ===== What We Do Section ===== */
+.what-we-do {
+    background: var(--black);
+}
+
+.what-we-do-text {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-size: 1.125rem;
+    line-height: 2;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* ===== Process Section ===== */
+.our-process {
+    background: var(--dark-gray);
+}
+
+.process-timeline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+    align-items: stretch;
+}
+
+.process-step {
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    padding: 2.5rem 2rem;
+    min-height: 300px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.process-step:hover {
+    border-color: var(--purple-accent);
+    box-shadow: var(--glow-purple);
+    transform: translateY(-5px);
+}
+
+.step-number {
+    width: 60px;
+    height: 60px;
+    background: var(--purple-accent);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+}
+
+.step-title {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.step-description {
+    color: var(--text-gray);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.step-time {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(139, 122, 184, 0.2);
+    border: 1px solid var(--purple-accent);
+    border-radius: 20px;
+    font-size: 0.85rem;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+}
+
+.process-arrow {
+    display: none;
+}
+
+.process-reassurance {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 4rem;
+    padding: 3rem;
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+}
+
+.reassurance-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: left;
+}
+
+.reassurance-icon {
+    font-size: 2rem;
+    color: var(--purple-accent);
+    flex-shrink: 0;
+}
+
+.reassurance-item p {
+    color: var(--text-light);
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* ===== Portfolio Section ===== */
+.portfolio {
+    background: var(--black);
+}
+
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 1rem 2rem;
+    border: 1px solid var(--border-gray);
+    background: transparent;
+    color: var(--text-white);
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.filter-btn:hover {
+    border-color: var(--text-white);
+    background: var(--light-gray);
+}
+
+.filter-btn.active {
+    background: var(--purple-accent);
+    color: var(--black);
+    border-color: var(--purple-accent);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-card:hover {
+    border-color: var(--purple-accent);
+    box-shadow: var(--glow-purple);
+    transform: translateY(-5px);
+}
+
+.project-image {
+    position: relative;
+    overflow: hidden;
+    height: 250px;
+}
+
+.project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    /* Enhanced highlights with warm yellow glow - artistic editorial look */
+    filter: saturate(1.1) brightness(1.08) contrast(1.15) sepia(0.25) hue-rotate(15deg);
+}
+
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+    /* Intensify highlights and warm glow on hover */
+    filter: saturate(1.2) brightness(1.12) contrast(1.2) sepia(0.28) hue-rotate(15deg);
+}
+
+.project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card:hover .project-overlay {
+    opacity: 1;
+}
+
+.view-details {
+    padding: 1rem 2rem;
+    background: var(--purple-accent);
+    color: var(--black);
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.view-details:hover {
+    background: var(--purple-light);
+    transform: scale(1.05);
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.view-details:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+.project-info {
+    padding: 2rem;
+}
+
+.project-category {
+    display: inline-block;
+    padding: 0.4rem 1rem;
+    background: rgba(139, 122, 184, 0.2);
+    color: var(--purple-light);
+    border: 1px solid var(--purple-accent);
+    border-radius: 20px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.project-title {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-description {
+    color: var(--text-gray);
+    line-height: 1.6;
+}
+
+/* ===== About Section ===== */
+.about {
+    background: var(--dark-gray);
+}
+
+.about-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.about-content p {
+    font-size: 1.125rem;
+    line-height: 2;
+    color: var(--text-light);
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+/* ===== Contact Section ===== */
+.contact {
+    background: var(--black);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.contact-info h3,
+.consultation-form h3 {
+    font-size: 1.5rem;
+    color: var(--text-white);
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.contact-item {
+    padding: 1.5rem;
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-item:hover {
+    border-color: var(--purple-accent);
+}
+
+.contact-item strong {
+    display: block;
+    color: var(--purple-light);
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.85rem;
+}
+
+.contact-item a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: var(--purple-accent);
+}
+
+.consultation-form {
+    background: var(--medium-gray);
+    padding: 2.5rem;
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 1rem;
+    background: var(--dark-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    color: var(--text-white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus, .form-group select:focus {
+    outline: none;
+    border-color: var(--purple-accent);
+    box-shadow: var(--glow-purple);
+}
+
+.form-group input::placeholder {
+    color: var(--text-gray);
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 1.25rem 2rem;
+    background: var(--purple-accent);
+    color: var(--black);
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.submit-btn:hover {
+    background: var(--purple-light);
+    transform: translateY(-3px);
+    box-shadow: var(--glow-purple);
+}
+
+/* ===== Footer ===== */
+.footer {
+    background: var(--dark-gray);
+    padding: 3rem 0;
+    text-align: center;
+    border-top: 1px solid var(--border-gray);
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.footer p {
+    color: var(--text-gray);
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-link {
+    color: var(--text-gray);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+
+.footer-link:hover {
+    color: var(--purple-accent);
+}
+
+/* ===== Modal ===== */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(5px);
+    overflow-y: auto;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    max-width: 900px;
+    width: 90%;
+    margin: 2rem;
+    position: relative;
+}
+
+.close-modal {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-white);
+    cursor: pointer;
+    line-height: 1;
+    transition: all 0.3s ease;
+    z-index: 1;
+}
+
+.close-modal:hover {
+    color: var(--purple-accent);
+    transform: rotate(90deg);
+}
+
+.modal-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.modal-body img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 4px 0 0 4px;
+    /* Match enhanced highlights with warm glow */
+    filter: saturate(1.1) brightness(1.08) contrast(1.15) sepia(0.25) hue-rotate(15deg);
+}
+
+.modal-info {
+    padding: 2rem;
+}
+
+.modal-info h2 {
+    margin: 1rem 0;
+    font-size: 2rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+}
+
+.modal-details {
+    margin-top: 2rem;
+}
+
+.modal-details h3,
+.modal-details h4 {
+    margin: 1.5rem 0 0.75rem;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    padding: 0.4rem 0.8rem;
+    background: rgba(139, 122, 184, 0.2);
+    border: 1px solid var(--purple-accent);
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-links {
+    margin-top: 2rem;
+}
+
+.modal-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: var(--purple-accent);
+    color: var(--black);
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 700;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-link:hover {
+    background: var(--purple-light);
+    transform: translateY(-3px);
+}
+
+.legal-modal {
+    padding: 3rem;
+}
+
+.modal-body-legal h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+}
+
+.modal-body-legal h3 {
+    font-size: 1.5rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    color: var(--purple-light);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.modal-body-legal p {
+    margin-bottom: 1rem;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+.modal-body-legal a {
+    color: var(--purple-accent);
+    text-decoration: none;
+}
+
+.modal-body-legal a:hover {
+    text-decoration: underline;
+}
+
+/* ===== Floating CTA Button ===== */
+.floating-cta {
+    position: fixed;
+    bottom: 6rem;
+    right: 2rem;
+    z-index: 999;
+    background: var(--purple-accent);
+    color: var(--black);
+    padding: 1.25rem 2.5rem;
+    border: 1px solid var(--purple-accent);
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    opacity: 0;
+    transform: translateY(100px);
+    animation: slideUp 0.8s ease 1s forwards;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes slideUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.floating-cta:hover {
+    background: var(--purple-light);
+    transform: translateY(-5px);
+    box-shadow: var(--glow-purple);
+}
+
+.floating-cta .arrow-icon {
+    transition: transform 0.4s ease;
+    font-size: 1.3rem;
+}
+
+.floating-cta:hover .arrow-icon {
+    transform: translateX(8px);
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 968px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-body {
+        grid-template-columns: 1fr;
+    }
+    
+    .modal-body img {
+        border-radius: 4px 4px 0 0;
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 4rem 1rem;
+        margin-top: 110px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.1rem;
+        color: var(--text-light);
+        font-weight: 500;
+    }
+    
+    .logo-image {
+        height: 10px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+    
+    .logo {
+        gap: 0.5rem;
+    }
+    
+    .logo-text {
+        gap: 0.35rem;
+        flex-wrap: nowrap;
+    }
+    
+    .logo-text-main {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+
+    .logo-text-sub {
+        font-size: 0.85rem;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+    }
+    
+    .logo-image-right {
+        display: block !important;
+        height: 15px !important;
+        width: auto !important;
+        margin: 0 !important;
+    }
+
+    .logo-text-main {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .logo-text-sub {
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+    }
+
+    .nav-container {
+        gap: 0.25rem;
+        padding: 0 0.75rem;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .logo {
+        flex: 1;
+        min-width: 0;
+        padding: 0.25rem 0.5rem;
+        overflow: hidden;
+    }
+
+    .logo-text {
+        flex-shrink: 1;
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    .hamburger {
+        flex-shrink: 0;
+        margin-left: auto;
+    }
+    
+    .section-title {
+        font-size: 2.5rem;
+    }
+
+    .process-timeline {
+        grid-template-columns: 1fr;
+    }
+
+    .process-step {
+        min-height: auto;
+        padding: 2rem 1.5rem;
+    }
+    
+    .process-reassurance {
+        grid-template-columns: 1fr;
+        padding: 2rem 1.5rem;
+    }
+    
+    .reassurance-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer .container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .cookie-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cookie-buttons {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .legal-modal {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+
+    .menu-overlay {
+        max-width: 100%;
+    }
+    
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .logo-image {
+        height: 60px;
+    }
+    
+    .logo {
+        gap: 0.4rem;
+    }
+    
+    .logo-text {
+        gap: 0.25rem;
+        flex-wrap: nowrap;
+    }
+    
+    .logo-text-main {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+    
+    .logo-text-sub {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+    }
+
+    .cookie-btn {
+        width: 100%;
+    }
+    
+    .floating-cta {
+        bottom: 5rem;
+        right: 1rem;
+        padding: 1rem 1.75rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Pricing & Payment Section ===== */
+.pricing-section {
+    background: var(--dark-gray);
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.pricing-card {
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.pricing-card:hover {
+    border-color: var(--purple-accent);
+    transform: translateY(-4px);
+    box-shadow: var(--glow-purple);
+}
+
+.pricing-card-featured {
+    border-color: var(--purple-accent);
+}
+
+.pricing-featured-label {
+    background: var(--purple-accent);
+    color: var(--black);
+    text-align: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 0.4rem;
+}
+
+.pricing-header {
+    background: var(--medium-gray);
+    padding: 2.5rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border-gray);
+}
+
+.pricing-name {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--purple-accent);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1rem;
+}
+
+.pricing-amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.pricing-total {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--text-white);
+}
+
+.pricing-label {
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.pricing-body {
+    padding: 2.5rem;
+    background: var(--dark-gray);
+}
+
+.pricing-features {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.pricing-features li {
+    padding: 0.75rem 0;
+    color: var(--text-light);
+    border-bottom: 1px solid var(--border-gray);
+    font-size: 0.95rem;
+}
+
+.pricing-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    width: 100%;
+    padding: 1.1rem;
+    background: transparent;
+    color: var(--purple-accent);
+    border: 1px solid var(--purple-accent);
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+}
+
+.pricing-cta:hover {
+    background: var(--purple-accent);
+    color: var(--black);
+    box-shadow: var(--glow-purple);
+}
+
+.pricing-card-featured .pricing-cta {
+    background: var(--purple-accent);
+    color: var(--black);
+}
+
+.pricing-card-featured .pricing-cta:hover {
+    background: var(--purple-light);
+    border-color: var(--purple-light);
+}
+
+.pricing-note {
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-gray);
+    font-style: italic;
+    margin-top: 1rem;
+    line-height: 1.8;
+}
+
+@media (max-width: 968px) {
+    .pricing-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+        margin: 0 auto 2rem;
+    }
+}
+
+
+
+/* ===== Social Media Icons ===== */
+.social-icons {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 0;
+}
+
+.social-icon {
+    color: var(--text-gray);
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.social-icon:hover {
+    color: var(--purple-accent);
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 8px rgba(212, 165, 255, 0.5));
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* =============================================================================
+   3D TURNTABLE CAROUSEL
+   — Desktop: full 3D lazy-susan rotation with CSS perspective
+   — Mobile (≤768px): flat swipe carousel (no 3D transforms)
+   ============================================================================= */
+
+/* --------------------------------------------------------------------------
+   Outer wrapper — provides the vertical space the carousel needs.
+   The filter buttons stay above it; the modal stays separate.
+   -------------------------------------------------------------------------- */
+.turntable-wrapper {
+    position: relative;
+    /* Reserve enough height for the 3D scene + shadow disc */
+    height: 620px;
+    /* Prevent horizontal overflow from deeply-rotated side cards */
+    overflow: hidden;
+    /* Remove the old grid margin */
+    margin-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Scene — sets the 3D perspective for all children.
+   Think of this as the "camera" container.
+   -------------------------------------------------------------------------- */
+.turntable-scene {
+    position: absolute;
+    /* Center horizontally in the wrapper */
+    left: 50%;
+    transform: translateX(-50%);
+    /* Cards sit roughly in the vertical center of the wrapper */
+    top: 30px;
+    /* Wide enough to let side cards peep into view */
+    width: 1100px;
+    height: 540px;
+    /* Perspective distance — smaller = more dramatic 3D; larger = flatter */
+    perspective: 1400px;
+    perspective-origin: 50% 40%;
+}
+
+/* --------------------------------------------------------------------------
+   Stage — the actual spinning disc.
+   Its transform-style: preserve-3d makes child transforms live in 3D.
+   JavaScript animates its rotateY value each frame.
+   -------------------------------------------------------------------------- */
+.turntable-stage {
+    position: absolute;
+    /* Center within the scene */
+    left: 50%;
+    top: 50%;
+    /* Keep the pivot at the centre of the disc */
+    transform-origin: center center;
+    transform: translateX(-50%) translateY(-50%) rotateY(0deg);
+    /* CRITICAL: children must inherit the 3D space */
+    transform-style: preserve-3d;
+    /* JS transitions between angle targets when a card is clicked */
+    transition: transform 0.1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    width: 0;
+    height: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Each card slot — positioned radially around the stage origin.
+   JavaScript sets --card-angle and translateZ (radius) on each one.
+   -------------------------------------------------------------------------- */
+.turntable-card-slot {
+    position: absolute;
+    /* Center the card on its own axis */
+    left: 50%;
+    top: 50%;
+    transform-origin: center center;
+    /* JS sets: rotateY(angle) translateZ(radius) */
+    transform: translateX(-50%) translateY(-50%) rotateY(0deg) translateZ(300px);
+    transform-style: preserve-3d;
+    /* Smooth transition when a card is explicitly focused */
+    transition: transform 0.6s ease;
+    cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
+   The visual card inside each slot.
+   Mirrors the existing .project-card aesthetic.
+   -------------------------------------------------------------------------- */
+.turntable-card {
+    /* Card dimensions */
+    width: 250px;
+    /* Tip: increase this if you want taller cards */
+    height: 340px;
+    background: var(--medium-gray);
+    border: 1px solid var(--border-gray);
+    border-radius: 4px;
+    overflow: hidden;
+    /* backface-visibility: hidden hides the card when it faces away */
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    /* JS applies inline opacity/scale as cards move around the circle */
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        opacity 0.4s ease,
+        transform 0.4s ease;
+    /* Prevent text selection while dragging / animating */
+    user-select: none;
+    /* The card itself is never a flex container — keep block layout */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Active / front card gets the full purple glow */
+.turntable-card-slot.is-front .turntable-card {
+    border-color: var(--purple-accent);
+    box-shadow:
+        0 0 20px rgba(212, 165, 255, 0.35),
+        0 0 60px rgba(212, 165, 255, 0.15),
+        0 30px 60px rgba(0,0,0,0.6);
+}
+
+/* Hover brightens any card */
+.turntable-card-slot:hover .turntable-card {
+    border-color: var(--purple-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Card image area — same proportions as the original project-card image
+   -------------------------------------------------------------------------- */
+.turntable-card__image {
+    position: relative;
+    overflow: hidden;
+    /* Fixed height so all images are equal regardless of natural size */
+    height: 175px;
+    flex-shrink: 0;
+}
+
+.turntable-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, filter 0.3s ease;
+    /* Match existing image treatment */
+    filter: saturate(1.1) brightness(1.08) contrast(1.15) sepia(0.25) hue-rotate(15deg);
+    /* Prevent the draggable-image ghost on mobile */
+    pointer-events: none;
+    -webkit-user-drag: none;
+}
+
+/* Only scale image on the front card so side cards don't overflow */
+.turntable-card-slot.is-front .turntable-card__image img {
+    transform: scale(1.03);
+    filter: saturate(1.2) brightness(1.12) contrast(1.2) sepia(0.28) hue-rotate(15deg);
+}
+
+/* --------------------------------------------------------------------------
+   Overlay "View Details" button — same as existing project-overlay
+   -------------------------------------------------------------------------- */
+.turntable-card__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Show overlay only on the front card when hovering */
+.turntable-card-slot.is-front .turntable-card:hover .turntable-card__overlay {
+    opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Card info area (category + title + description)
+   -------------------------------------------------------------------------- */
+.turntable-card__info {
+    padding: 1.25rem 1.25rem 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    overflow: hidden;
+}
+
+.turntable-card__category {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    background: rgba(139, 122, 184, 0.2);
+    color: var(--purple-light);
+    border: 1px solid var(--purple-accent);
+    border-radius: 20px;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    align-self: flex-start;
+}
+
+.turntable-card__title {
+    font-size: 1.05rem;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.3;
+    margin: 0;
+    /* Clamp to two lines max */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.turntable-card__description {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    line-height: 1.5;
+    margin: 0;
+    /* Clamp to two lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* --------------------------------------------------------------------------
+   Ground shadow disc — pure aesthetics, gives the carousel a "floating
+   on a surface" feel.  CSS radial gradient, no image needed.
+   -------------------------------------------------------------------------- */
+.turntable-ground-shadow {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 700px;
+    height: 60px;
+    /* Elliptical shadow */
+    background: radial-gradient(
+        ellipse at center,
+        rgba(139, 122, 184, 0.18) 0%,
+        rgba(139, 122, 184, 0.06) 50%,
+        transparent 75%
+    );
+    pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   Navigation bar — arrows flanking the dots, always visible
+   -------------------------------------------------------------------------- */
+.turntable-nav {
+    position: absolute;
+    bottom: 14px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    z-index: 10;
+    /* Prevent the nav from being clipped by the wrapper overflow */
+    white-space: nowrap;
+}
+
+.turntable-dots {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.turntable-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--border-gray);
+    border: 1px solid var(--border-gray);
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.3s ease, border-color 0.3s ease;
+    padding: 0;
+    flex-shrink: 0;
+}
+
+.turntable-dot.is-active {
+    background: var(--purple-accent);
+    border-color: var(--purple-accent);
+    transform: scale(1.4);
+}
+
+.turntable-dot:hover {
+    background: var(--purple-dark);
+    border-color: var(--purple-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Prev / Next arrows — inline in the nav bar, always visible
+   -------------------------------------------------------------------------- */
+.turntable-arrow {
+    /* Always visible — no display:none */
+    position: static;        /* inline flow inside .turntable-nav */
+    transform: none;
+    background: rgba(26,26,26,0.85);
+    border: 1px solid var(--border-gray);
+    color: var(--text-white);
+    font-size: 1.6rem;
+    line-height: 1;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 20;
+    transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+    user-select: none;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+.turntable-arrow:hover {
+    background: var(--light-gray);
+    border-color: var(--purple-accent);
+    color: var(--purple-accent);
+}
+
+/* --------------------------------------------------------------------------
+   Hint text — fades in then out on first page load
+   -------------------------------------------------------------------------- */
+.turntable-hint {
+    position: absolute;
+    bottom: 36px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: var(--text-gray);
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 10;
+    /* Start invisible, JS adds .is-visible then .is-hidden */
+    opacity: 0;
+    transition: opacity 0.6s ease;
+}
+
+.turntable-hint.is-visible {
+    opacity: 1;
+}
+
+.turntable-hint.is-hidden {
+    opacity: 0;
+}
+
+/* =============================================================================
+   MOBILE OVERRIDES  (≤ 768px)
+   The 3D carousel collapses into a simple flat swipe carousel.
+   ============================================================================= */
+@media (max-width: 768px) {
+
+    /* Wrapper becomes a flat overflow container */
+    .turntable-wrapper {
+        height: 420px;
+        overflow: hidden;
+    }
+
+    /* Scene becomes a full-width flat rail */
+    .turntable-scene {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        /* Disable perspective on mobile */
+        perspective: none;
+        transform: none;
+        overflow: hidden;
+    }
+
+    /* Stage becomes a horizontal flex row */
+    .turntable-stage {
+        display: flex;
+        flex-direction: row;
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        /* JS sets translateX to slide between cards */
+        transform: translateX(0);
+        /* Override the 3D stage transition with a simple slide */
+        transition: transform 0.45s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        transform-style: flat;
+    }
+
+    /* Each slot becomes a fixed-width flex item */
+    .turntable-card-slot {
+        position: relative;
+        left: auto;
+        top: auto;
+        flex: 0 0 100%;
+        width: 100%;
+        height: 100%;
+        transform: none !important; /* override 3D rotateY */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 1rem;
+    }
+
+    /* Cards fill the slot on mobile */
+    .turntable-card {
+        width: 100%;
+        max-width: 340px;
+        height: 380px;
+        opacity: 1 !important; /* override JS-set opacity */
+    }
+
+    /* Front card glow still applies */
+    .turntable-card-slot.is-front .turntable-card {
+        border-color: var(--purple-accent);
+        box-shadow: 0 0 20px rgba(212, 165, 255, 0.25);
+    }
+
+    /* Show overlay on any hover on mobile */
+    .turntable-card:hover .turntable-card__overlay {
+        opacity: 1;
+    }
+
+    /* Show arrows on mobile — they're already visible but ensure display */
+    .turntable-arrow {
+        display: flex;
+    }
+
+    /* Nav bar stays at the bottom */
+    .turntable-nav {
+        bottom: 8px;
+    }
+
+    /* Hide 3D-specific decorations */
+    .turntable-ground-shadow {
+        display: none;
+    }
+
+    .turntable-hint {
+        display: none;
+    }
+
+    /* Hint hidden on mobile */
+    .turntable-hint {
+        display: none;
+    }
+}
+
+/* =============================================================================
+   Preserve existing filter buttons above the carousel
+   (no changes needed — .filter-container stays as-is)
+   ============================================================================= */
+
+/* =============================================================================
+   Keep existing project modal styles intact — the modal HTML is unchanged.
+   The carousel's "View Details" buttons fire the same openProjectModal() call.
+   ============================================================================= */
+

@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="...">
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <title>Flecha Web Design - Web Design for Education & Small Business</title>
+    <link rel="stylesheet" href="Business_Portfolio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="cookie-consent hidden">
+        <div class="cookie-content">
+            <p>We use cookies to improve your experience and analyze our traffic. You can choose to accept all or reject non-essential cookies.</p>
+            <div class="cookie-buttons">
+                <button id="acceptAll" class="cookie-btn accept">Accept All</button>
+                <button id="rejectAll" class="cookie-btn reject">Reject All</button>
+                <button id="managePreferences" class="cookie-btn manage">Manage Preferences</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Header/Navigation -->
+    <header>
+        <nav class="navbar">
+            <div class="nav-container">
+                <a href="index.html" class="logo">
+                    <img src="flecha-web-design-logo.png" alt="Flecha chevrons" class="logo-image">
+                    <div class="logo-text">
+                        <span class="logo-text-main">FLECHA</span>
+                        <span class="logo-text-sub">WEB DESIGN</span>
+                    </div>
+                    <img src="flecha-web-design-logo.png" alt="Flecha chevrons" class="logo-image logo-image-right">
+                </a>
+                <button class="hamburger" id="hamburgerBtn" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hamburger Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay">
+        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+        <nav class="menu-nav">
+            <ul>
+                <li><a href="#home" class="menu-link">Home</a></li>
+                <li><a href="#about" class="menu-link">About</a></li>
+                <li><a href="#our-process" class="menu-link">Our Process</a></li>
+                <li><a href="#portfolio" class="menu-link">View Our Work</a></li>
+                <li><a href="#pricing" class="menu-link">Pricing</a></li>
+                <li><a href="#contact" class="menu-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Hero/Landing Section -->
+    <section id="home" class="hero">
+        <canvas id="heroCanvas" class="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h2 class="hero-title">Moving Your Vision Forward</h2>
+            <p class="hero-subtitle">Web design for education and local businesses that points you in the right direction</p>
+        </div>
+    </section>
+
+    <!-- Company Description Section -->
+    <section class="company-intro">
+        <div class="container">
+            <h2 class="section-title">Welcome to Flecha Web Design</h2>
+            <p class="intro-text">At Flecha Web Design, we specialize in creating purposeful, user-friendly websites for educational institutions and local businesses. Our name, "Flecha" (Spanish for "arrow"), represents our mission: to point your business or organization in the right direction and help you move forward in the digital world.</p>
+        </div>
+    </section>
+
+    <!-- What We Do Section -->
+    <section class="what-we-do">
+        <div class="container">
+            <h2 class="section-title">What We Do</h2>
+            <p class="what-we-do-text">Every project begins with understanding your unique goals and audience. We don't believe in one-size-fits-all templates. Instead, we take time to learn about your vision, your values, and what sets you apart. Our design strategy focuses on three core principles: clarity, functionality, and purpose. Whether you're an educational platform helping students achieve their dreams or a local business serving your community, we craft websites that are intuitive, professional, and designed to grow with you. We combine clean aesthetics with practical features to ensure your site doesn't just look good—it works hard for you.</p>
+        </div>
+    </section>
+
+    <!-- Our Process Section -->
+    <section id="our-process" class="our-process">
+        <div class="container">
+            <h2 class="section-title">Our Process</h2>
+            <p class="section-subtitle">Simple steps, no tech knowledge required</p>
+            
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Free Consultation</h3>
+                        <p class="step-description">We start with a friendly conversation about your vision, goals, and what success looks like for you. No pressure, no jargon—just getting to know your business.</p>
+                        <span class="step-time">30 minutes</span>
+                    </div>
+                </div>
+
+                <div class="process-arrow">→</div>
+
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Custom Proposal</h3>
+                        <p class="step-description">You'll receive a clear proposal with timeline, deliverables, and pricing. No surprises, no hidden fees. You approve before we begin any work.</p>
+                        <span class="step-time">2-3 business days</span>
+                    </div>
+                </div>
+
+                <div class="process-arrow">→</div>
+
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Design & Build</h3>
+                        <p class="step-description">We handle all the technical stuff while keeping you in the loop. You'll see progress updates and give feedback in plain language—we translate it into code.</p>
+                        <span class="step-time">2-4 weeks</span>
+                    </div>
+                </div>
+
+                <div class="process-arrow">→</div>
+
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Launch & Support</h3>
+                        <p class="step-description">We'll guide you through launch day and show you how to make simple updates. Plus, we're here if you need help down the road.</p>
+                        <span class="step-time">Ongoing</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="process-reassurance">
+                <div class="reassurance-item">
+                    <span class="reassurance-icon">✓</span>
+                    <p>No technical knowledge needed</p>
+                </div>
+                <div class="reassurance-item">
+                    <span class="reassurance-icon">✓</span>
+                    <p>Clear communication, no confusing jargon</p>
+                </div>
+                <div class="reassurance-item">
+                    <span class="reassurance-icon">✓</span>
+                    <p>You're in control every step of the way</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">View Our Work</h2>
+            <p class="section-subtitle">Recent projects across education and small business</p>
+            
+            <!-- Filter Buttons -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All Projects</button>
+                <button class="filter-btn" data-filter="Small Business">Small Business</button>
+                <button class="filter-btn" data-filter="Healthcare">Healthcare</button>
+                <button class="filter-btn" data-filter="Education">Education</button>
+                <button class="filter-btn" data-filter="Professional Services">Professional Services</button>
+            </div>
+            
+            <!-- =====================================================
+                 3D TURNTABLE CAROUSEL
+                 Cards are arranged in a circle in 3D space.
+                 The JS in Business_Portfolio.js drives the rotation.
+                 On mobile (≤768px) this becomes a swipe carousel.
+                 ===================================================== -->
+            <div class="turntable-wrapper" id="turntableWrapper" aria-label="Project portfolio carousel">
+
+                <!-- The scene establishes the 3D perspective context -->
+                <div class="turntable-scene" id="turntableScene">
+
+                    <!-- The stage rotates as a unit; all cards are children -->
+                    <div class="turntable-stage" id="turntableStage">
+                        <!-- Cards are injected here by JavaScript -->
+                    </div>
+                </div>
+
+                <!-- Ambient ground reflection / shadow disc -->
+                <div class="turntable-ground-shadow" aria-hidden="true"></div>
+
+                <!-- Navigation bar: ‹ [dots] › — always visible on desktop & mobile -->
+                <div class="turntable-nav" id="turntableNav">
+                    <button class="turntable-arrow turntable-arrow--prev" id="turntablePrev" aria-label="Previous project">&#8249;</button>
+                    <div class="turntable-dots" id="turntableDots" role="tablist" aria-label="Select project"></div>
+                    <button class="turntable-arrow turntable-arrow--next" id="turntableNext" aria-label="Next project">&#8250;</button>
+                </div>
+
+                <!-- Hint text shown briefly on first load -->
+                <p class="turntable-hint" id="turntableHint" aria-hidden="true">
+                    Click any card to bring it forward &nbsp;·&nbsp; Hover to pause
+                </p>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">About the Name</h2>
+            <div class="about-content">
+                <p>The name "Flecha Web Design" holds special meaning for us. "Flecha" is the Spanish word for "arrow," symbolizing direction, precision, and forward movement. Just as an arrow points toward a target with purpose and clarity, we help businesses and educational institutions navigate the digital landscape with confidence.</p>
+                <p>We chose this name because we believe great web design should do more than look good—it should guide users exactly where they need to go and help organizations move toward their goals. Every arrow has a direction, and we're here to make sure yours is pointed toward success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Us</h2>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Get in Touch</h3>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <strong>Email:</strong>
+                            <a href="/cdn-cgi/l/email-protection#5d2a2a2a731b31383e353c700a383f19382e343a33733e3230">www.Flecha-WebDesign.com</a>
+                        </div>
+                        <div class="contact-item">
+                            <strong>Phone:</strong>
+                            <a href="tel:+14809957487">(480) 995-7487</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="consultation-form">
+                    <h3>Request a Consultation</h3>
+                    <form action="https://formspree.io/f/xreavegv" method="POST">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Your Name" required pattern="[A-Za-z\s\-']{2,50}" title="Please enter a valid name (letters only, 2-50 characters)">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" placeholder="Your Email" required maxlength="100" title="Please enter a valid email address">
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Your Phone Number" required pattern="[\d\s\-\+\(\)]{7,15}" title="Please enter a valid phone number">
+                        </div>
+                        
+                        
+                        
+                        <div class="form-group">
+                            <input type="text" id="preferred_date" name="preferred_date" placeholder="Preferred Date" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <select name="preferred_time" required>
+                                <option value="" disabled selected>Select a Preferred Time</option>
+                                <option value="9:00 am">9:00 am</option>
+                                <option value="10:00 am">10:00 am</option>
+                                <option value="11:00 am">11:00 am</option>
+                                <option value="12:00 pm">12:00 pm</option>
+                                <option value="1:00 pm">1:00 pm</option>
+                                <option value="2:00 pm">2:00 pm</option>
+                                <option value="3:00 pm">3:00 pm</option>
+                                <option value="4:00 pm">4:00 pm</option>
+                                <option value="5:00 pm">5:00 pm</option>
+                            </select>
+                        </div>
+
+
+
+
+
+
+                        <!-- FormSubmit Configuration -->
+                        <input type="hidden" name="_subject" value="New Consultation Request - Flecha Web Design">
+                        <input type="hidden" name="_captcha" value="true">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+                        <button type="submit" class="submit-btn">Request Consultation <span class="arrow-icon">→</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+<footer class="footer">
+    <div class="container">
+        <p>&copy; 2026 Flecha Web Design. All rights reserved.</p>
+        <div class="social-icons">
+            <a href="YOUR_FACEBOOK_URL" class="social-icon" target="_blank" aria-label="Facebook">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="YOUR_LINKEDIN_URL" class="social-icon" target="_blank" aria-label="LinkedIn">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+            <a href="YOUR_X_URL" class="social-icon" target="_blank" aria-label="X">
+                <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="YOUR_INSTAGRAM_URL" class="social-icon" target="_blank" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+        <div class="footer-links">
+            <a href="#privacyModal" class="footer-link" id="privacyLink">Privacy Policy</a>
+            <a href="#accessibilityModal" class="footer-link" id="accessibilityLink">Accessibility Statement</a>
+        </div>
+    </div>
+</footer>
+    <!-- Privacy Policy Modal -->
+    <div id="privacyModal" class="modal">
+        <div class="modal-content legal-modal">
+            <span class="close-modal" data-modal="privacyModal">&times;</span>
+            <div class="modal-body-legal">
+                <h2>Privacy Policy</h2>
+                <p>Your privacy is a priority. This policy explains what data we collect, why we need it, and how you can control it.</p>
+                
+                <h3>Data Collection</h3>
+                <p>We only collect your phone number and email only when you request a consultation.</p>
+                
+                <h3>Third-Party Sharing</h3>
+                <p>We never share your data.</p>
+                
+                <h3>User Rights</h3>
+                <p>You have the right to delete your information at any time. Simply email us at <a href="/cdn-cgi/l/email-protection#51173d343239307c06343315342238363f11173d343239307c06343315342238363f7f323e3c"><span class="__cf_email__" data-cfemail="591f353c3a3138740e3c3b1d3c2a303e37191f353c3a3138740e3c3b1d3c2a303e37773a3634">[email&#160;protected]</span></a>.</p>
+                
+                <h2>Terms of Service</h2>
+                <p>By using our site, you agree to use it for lawful purposes and respect our intellectual property. While we strive for 100% uptime, we cannot guarantee the site will always be error-free.</p>
+                
+                <h3>Relationship of Parties</h3>
+                <p>It is understood that Flecha Web Design is an independent contractor and not an employee of the Client. Flecha Web Design shall be responsible for all self-employment taxes and social security contributions. The Client shall not provide fringe benefits, including health insurance or paid vacation, and shall not exercise control over the specific methods or timing used to complete the deliverables, provided deadlines are met.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Accessibility Statement Modal -->
+    <div id="accessibilityModal" class="modal">
+        <div class="modal-content legal-modal">
+            <span class="close-modal" data-modal="accessibilityModal">&times;</span>
+            <div class="modal-body-legal">
+                <h2>Accessibility Statement for Flecha Web Design</h2>
+                
+                <h3>Our Commitment</h3>
+                <p>At Flecha Web Design, we are committed to ensuring digital accessibility for everyone, including people with disabilities. We are continually improving the user experience for everyone and applying the relevant accessibility standards to ensure our digital products are inclusive.</p>
+                
+                <h3>Conformance Status</h3>
+                <p>The Web Content Accessibility Guidelines (WCAG) defines requirements for designers and developers to improve accessibility for people with disabilities. It defines three levels of conformance: Level A, Level AA, and Level AAA.</p>
+                <p>Flecha Web Design is partially conformant with WCAG 2.1 Level AA. Partially conformant means that some parts of the content do not yet fully conform to the accessibility standard (for example, we may be in the process of adding descriptive alt-text to older portfolio pieces).</p>
+                
+                <h3>Accessibility Features</h3>
+                <p>To ensure a seamless experience, our website currently includes:</p>
+                <p><strong>Keyboard Navigation:</strong> All essential site functions are accessible via keyboard.</p>
+                <p><strong>Screen Reader Compatibility:</strong> Proper use of ARIA labels and semantic HTML.</p>
+                <p><strong>Contrast Ratios:</strong> Text and UI elements meet or exceed minimum contrast requirements for readability.</p>
+                <p><strong>Responsive Design:</strong> Content scales gracefully on all devices and zoom levels up to 400%.</p>
+                
+                <h3>Feedback and Contact</h3>
+                <p>We welcome your feedback on the accessibility of Flecha Web Design. Please let us know if you encounter accessibility barriers on our site.</p>
+                <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#0e7979792048626b6d666f23596b6c4a6b7d676960206d6163">www.Flecha-WebDesign.com</a></p>
+                <p><strong>Phone:</strong> (480) 995-7487</p>
+                <p><strong>Response Time:</strong> We aim to respond to accessibility inquiries within 2 business days.</p>
+                
+                <h3>Ongoing Efforts</h3>
+                <p>Accessibility is an ongoing journey. We perform regular audits and updates to our site to ensure we remain compliant with 2026 industry standards.</p>
+                
+                <h3>Formal Approval of this Statement</h3>
+                <p>This Accessibility Statement is approved by:<br>
+                Flecha Web Design<br>
+                <strong>Last Updated:</strong> January 18, 2026</p>
+            </div>
+        </div>
+    </div>
+    <!-- Project Detail Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal" data-modal="projectModal">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Project">
+                <div class="modal-info">
+                    <span id="modalCategory" class="project-category"></span>
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <div class="modal-details">
+                        <h3>Project Details</h3>
+                        <p id="modalFullDescription"></p>
+                        <h4>Technologies Used</h4>
+                        <div id="modalTechnologies" class="tech-tags"></div>
+                        <div class="modal-links">
+                            <a href="#" id="modalLiveLink" class="modal-link" target="_blank" rel="noopener noreferrer">View Live Site <span class="arrow-icon">→</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pricing & Payment Section -->
+<section id="pricing" class="pricing-section">
+    <div class="container">
+        <h2 class="section-title">Investment</h2>
+        <p class="section-subtitle">Simple, transparent pricing — no surprises</p>
+
+        <div class="pricing-card">
+            <div class="pricing-header">
+                <h3 class="pricing-name">Custom Website</h3>
+                <div class="pricing-amount">
+                    <span class="pricing-total">$3,000</span>
+                    <span class="pricing-label">Total Project Price</span>
+                </div>
+            </div>
+            <div class="pricing-body">
+                <p class="pricing-deposit">50% Deposit Due Today: <strong>$1,500</strong></p>
+                <ul class="pricing-features">
+                    <li>✓ Custom Design — No Templates</li>
+                    <li>✓ Mobile Responsive</li>
+                    <li>✓ Contact Form</li>
+                    <li>✓ Launch Support</li>
+                    <li>✓ Remaining $1,500 due on delivery</li>
+                </ul>
+                <div id="payment-form">
+                    <div id="card-container"></div>
+                    <button id="card-button" class="pay-btn">
+                        Pay $1,500 Deposit <span class="arrow-icon">→</span>
+                    </button>
+                </div>
+                <div id="payment-status"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+    <!-- Floating CTA Button -->
+    <a href="#contact" class="floating-cta">
+        Request Consultation <span class="arrow-icon">→</span>
+    </a>
+
+    <script src="Business_Portfolio.js"></script>
+</body>
+</html>
